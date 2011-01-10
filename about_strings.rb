@@ -161,11 +161,13 @@ EOS
     assert_equal "let", string[7..9]
   end
 
-  def test_you_can_get_a_single_character_from_a_string
-    string = "Bacon, lettuce and tomato"
-    assert_equal 97, string[1]
+  in_ruby_version("1.8") do
+    def test_you_can_get_a_single_character_from_a_string
+      string = "Bacon, lettuce and tomato"
+      assert_equal 97, string[1]
 
-    # Surprised?
+      # Surprised?
+    end
   end
 
   in_ruby_version("1.8") do
@@ -180,7 +182,7 @@ EOS
   in_ruby_version("1.9") do
     def test_in_ruby_1_9_single_characters_are_represented_by_strings
       assert_equal "a", ?a
-      assert_equal true, ?a == 97
+      assert_equal false, ?a == 97
     end
   end
 
