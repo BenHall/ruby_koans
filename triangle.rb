@@ -15,6 +15,14 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+	number_of_sides_equal = 0
+	number_of_sides_equal += 1 if (a == b)
+	number_of_sides_equal += 1 if (b == c)
+	number_of_sides_equal += 1 if (a == c)
+
+	return :equilateral if number_of_sides_equal == 3
+	return :isosceles if number_of_sides_equal == 1
+	return :scalene if number_of_sides_equal == 0
 end
 
 # Error class used in part 2.  No need to change this code.
